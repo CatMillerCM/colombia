@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import PlayersDropdown from '@/components/atoms/players-dropdown';
 import styles from './entry.module.css';
 
 const Page = () => {
@@ -11,16 +12,11 @@ const Page = () => {
   return (
     <main className={styles.main}>
       <div>
-        <select
-          className={styles.input}
-          value={playerCount}
-          onChange={e => setPlayerCount(e.target.value)}
-        >
-          <option value="" disabled>Select number of players</option>
-          {ballNumbers.map((number) => (
-            <option key={number} value={number}>{number}</option>
-          ))}
-        </select>
+        <PlayersDropdown
+          playerCount={playerCount}
+          setPlayerCount={setPlayerCount}
+          ballNumbers={ballNumbers}
+        />
         <button
           className={styles.button}
           type="button"
