@@ -6,6 +6,8 @@ import styles from './entry.module.css';
 const Page = () => {
   const [playerCount, setPlayerCount] = useState(null);
 
+  const ballNumbers = Array.from({ length: 14 }, (_, i) => i + 2);
+
   return (
     <main className={styles.main}>
       <div>
@@ -15,8 +17,8 @@ const Page = () => {
           onChange={e => setPlayerCount(e.target.value)}
         >
           <option value="" disabled>Select number of players</option>
-          {[...Array(15)].map((_, i) => (
-            <option key={i + 1} value={i + 1}>{i + 1}</option>
+          {ballNumbers.map((number) => (
+            <option key={number} value={number}>{number}</option>
           ))}
         </select>
         <button
