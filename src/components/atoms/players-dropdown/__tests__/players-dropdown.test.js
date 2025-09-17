@@ -10,7 +10,7 @@ describe('PlayersDropdown', () => {
   beforeEach(() => {
     render(
       <PlayersDropdown
-        playerCount={1}
+        playerCount={2}
         setPlayerCount={setPlayerCountMock}
         ballNumbers={ballNumbers} />
     );
@@ -37,11 +37,11 @@ describe('PlayersDropdown', () => {
 
   describe('when an option is selected', () => {
     beforeEach(() => {
-      fireEvent.change(selectBox, { target: { value: '3' } });
+      fireEvent.change(selectBox, { target: { value: '4' } });
     });
 
     it('should call setPlayerCount with the selected option', () => {
-      expect(setPlayerCountMock).toHaveBeenCalledWith('3');
+      expect(setPlayerCountMock).toHaveBeenCalledWith('4');
     });
   });
 });

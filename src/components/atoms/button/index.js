@@ -16,9 +16,7 @@ const Button = ({ playerCount }) => {
 };
 
 Button.propTypes = {
-  playerCount: PropTypes.number.isRequired,
-  setPlayerCount: PropTypes.func.isRequired,
-  ballNumbers: PropTypes.arrayOf(PropTypes.number).isRequired
+  playerCount: PropTypes.number.isRequired
 };
 
 export default Button;
