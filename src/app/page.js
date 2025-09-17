@@ -6,7 +6,7 @@ import styles from './entry.module.css';
 import Button from '@/components/atoms/button';
 
 const Page = () => {
-  const [playerCount, setPlayerCount] = useState(null);
+  const [playerCount, setPlayerCount] = useState("");
 
   const ballNumbers = Array.from({ length: 14 }, (_, i) => i + 2);
 

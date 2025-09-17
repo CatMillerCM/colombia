@@ -10,7 +10,7 @@ describe('PlayersDropdown', () => {
   beforeEach(() => {
     render(
       <PlayersDropdown
-        playerCount={2}
+        playerCount={""}
         setPlayerCount={setPlayerCountMock}
         ballNumbers={ballNumbers} />
     );
@@ -23,6 +23,7 @@ describe('PlayersDropdown', () => {
 
     expect(selectBox).toBeInTheDocument();
     expect(placeholderValue).toBeInTheDocument();
+    expect(selectBox).toHaveValue('');
   });
 
   it('should render a select dropdown with all ball number options and disabled placeholder option', () => {
