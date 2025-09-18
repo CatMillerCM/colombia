@@ -3,7 +3,9 @@ import React from 'react';
 import checkIfRemainder from '@/utils/check-if-remainder';
 import styles from './players-dropdown.module.css';
 
-const PlayersDropdown = ({ playerCount, setPlayerCount, setHasRemainder, playerOptions }) => {
+const PlayersDropdown = ({ playerCount, setPlayerCount, setHasRemainder }) => {
+  const playerOptions = Array.from({ length: 14 }, (_, i) => i + 2);
+
   const handleOnChange = (e) => {
     setPlayerCount(Number(e.target.value));
     const hasRemainder = checkIfRemainder(Number(e.target.value), 15);
@@ -27,8 +29,7 @@ const PlayersDropdown = ({ playerCount, setPlayerCount, setHasRemainder, playerO
 PlayersDropdown.propTypes = {
   playerCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   setPlayerCount: PropTypes.func.isRequired,
-  setHasRemainder: PropTypes.func.isRequired,
-  playerOptions: PropTypes.arrayOf(PropTypes.number).isRequired
+  setHasRemainder: PropTypes.func.isRequired
 };
 
 export default PlayersDropdown;

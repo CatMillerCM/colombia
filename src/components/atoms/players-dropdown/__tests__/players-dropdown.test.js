@@ -5,7 +5,7 @@ import PlayersDropdown from '../index';
 describe('PlayersDropdown', () => {
   const setPlayerCountMock = jest.fn();
   const setHasRemainderMock = jest.fn();
-  const playerOptions = [2, 3, 4, 5];
+  const playerOptions = Array.from({ length: 14 }, (_, i) => i + 2);
   let selectBox = null;
 
   beforeEach(() => {
@@ -14,7 +14,7 @@ describe('PlayersDropdown', () => {
         playerCount={""}
         setPlayerCount={setPlayerCountMock}
         setHasRemainder={setHasRemainderMock}
-        playerOptions={playerOptions} />
+      />
     );
 
     selectBox = screen.getByRole('combobox');
