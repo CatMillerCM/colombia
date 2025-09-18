@@ -6,30 +6,31 @@ const shuffleArray = (array) => {
   }
 };
 
-const distributeNumbers = ({ playerCount, ballNumbers, useRemainder }) => {
+const distributeNumbers = (playerCount, useRemainder) => {
+  const ballNumbers = Array.from({ length: 15 }, (_, i) => i + 1);
 	const shuffledBallNumbers = [...ballNumbers];
   shuffleArray(shuffledBallNumbers);
 
-	const distributions = Array.from({ length: playerCount }, () => []);
+	const playerPots = Array.from({ length: playerCount }, () => []);
 	const ballsPerPlayer = Math.floor(shuffledBallNumbers.length / playerCount);
 	const remainder = shuffledBallNumbers.length % playerCount;
   let discarded = [];
 
   let index = 0;
   for (let p = 0; p < playerCount; p++) {
-    distributions[p] = shuffledBallNumbers.slice(index, index + ballsPerPlayer);
+    playerPots[p] = shuffledBallNumbers.slice(index, index + ballsPerPlayer);
     index += ballsPerPlayer;
   }
   
   if (useRemainder) {
     for (let r = 0; r < remainder; r++) {
-      distributions[r].push(shuffledBallNumbers[index++]);
+      playerPots[r].push(shuffledBallNumbers[index++]);
     }
   } else {
     discarded = shuffledBallNumbers.slice(index);
   }
 
-  return { distributions, discarded };
+  return { playerPots, discarded };
 };
 
 export default distributeNumbers;
