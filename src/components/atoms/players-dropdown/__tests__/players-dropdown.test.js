@@ -4,7 +4,8 @@ import PlayersDropdown from '../index';
 
 describe('PlayersDropdown', () => {
   const setPlayerCountMock = jest.fn();
-  const ballNumbers = [1, 2, 3, 4, 5];
+  const setHasRemainderMock = jest.fn();
+  const playerOptions = [2, 3, 4, 5];
   let selectBox = null;
 
   beforeEach(() => {
@@ -12,7 +13,8 @@ describe('PlayersDropdown', () => {
       <PlayersDropdown
         playerCount={""}
         setPlayerCount={setPlayerCountMock}
-        ballNumbers={ballNumbers} />
+        setHasRemainder={setHasRemainderMock}
+        playerOptions={playerOptions} />
     );
 
     selectBox = screen.getByRole('combobox');
@@ -26,13 +28,13 @@ describe('PlayersDropdown', () => {
     expect(selectBox).toHaveValue('');
   });
 
-  it('should render a select dropdown with all ball number options and disabled placeholder option', () => {
+  it('should render a select dropdown with all player options and disabled placeholder option', () => {
     const dropdownOptions = screen.getAllByRole('option');
     const optionValues = dropdownOptions.map(option => option.textContent);
     const placeholderOption = screen.getByRole('option', { name: 'Select number of players' });
 
-    expect(dropdownOptions.length).toBe(ballNumbers.length + 1);
-    expect(optionValues).toEqual(expect.arrayContaining(ballNumbers.map(String)));
+    expect(dropdownOptions.length).toBe(playerOptions.length + 1);
+    expect(optionValues).toEqual(expect.arrayContaining(playerOptions.map(String)));
     expect(placeholderOption).toBeDisabled();
   });
 
@@ -42,7 +44,11 @@ describe('PlayersDropdown', () => {
     });
 
     it('should call setPlayerCount with the selected option', () => {
-      expect(setPlayerCountMock).toHaveBeenCalledWith('4');
+      expect(setPlayerCountMock).toHaveBeenCalledWith(4);
+    });
+
+    it('should call setHasRemainder', () => {
+      expect(setHasRemainderMock).toHaveBeenCalled();
     });
   });
 });
