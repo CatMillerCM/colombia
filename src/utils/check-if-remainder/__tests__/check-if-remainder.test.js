@@ -1,13 +1,13 @@
 import checkIfRemainder from '../index';
 
 describe('checkIfRemainder', () => {
-  const ballNumbers = Array.from({ length: 15 }, (_, i) => i + 1);
+  const ballCount = 15;
 
   describe('when ball numbers are divisible by player count', () => {
     const playerCount = 3;
 
     it('should return false', () => {
-      const result = checkIfRemainder({ playerCount, ballNumbers });
+      const result = checkIfRemainder(playerCount, ballCount);
 
       expect(result).toBe(false);
     });
@@ -17,7 +17,7 @@ describe('checkIfRemainder', () => {
   const playerCount = 4;
 
     it('should return true', () => {
-      const result = checkIfRemainder({ playerCount, ballNumbers });
+      const result = checkIfRemainder(playerCount, ballCount);
 
       expect(result).toBe(true);
     });
