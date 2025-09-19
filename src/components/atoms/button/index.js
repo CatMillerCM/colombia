@@ -3,27 +3,23 @@ import React from 'react';
 import styles from './button.module.css';
 import distributeNumbers from '@/utils/distribute-numbers';
 
-const Button = ({ playerCount, useRemainder }) => {
-  const handleClick = () => {
-    const distributions = distributeNumbers(playerCount, useRemainder);
-    console.log(distributions, "<<<dissss")
-  };
-
+const Button = ({ onClick, label, disabled = false }) => {
   return (
     <button
       className={styles.button}
       type="button"
-      onClick={handleClick}
-      disabled={!playerCount}
+      onClick={onClick}
+      disabled={disabled}
     >
-      Distribute ball numbers
+      {label}
     </button>
   )
 };
 
 Button.propTypes = {
-  playerCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  useRemainder: PropTypes.bool.isRequired
+  onClick: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  disabled: PropTypes.bool
 };
 
 export default Button;

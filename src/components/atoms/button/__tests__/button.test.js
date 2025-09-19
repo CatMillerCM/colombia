@@ -3,30 +3,30 @@ import { render, screen } from '@testing-library/react';
 import Button from '../index';
 
 describe('Button', () => {
-  const renderButton = (playerCount) => {
+  const handleClickMock = jest.fn();
+  let button;
+
+  beforeEach(() => {
     render(
       <Button
-        playerCount={playerCount}
-        useRemainder={true}
+        onClick={handleClickMock}
+        label="Button Label"
       />);
-    return screen.getByRole('button', { name: /distribute ball numbers/i });
-  };
+
+      button = screen.getByRole('button', { name: /button label/i });
+  });
 
   it('should render a button with correct text', () => {
-    const button = renderButton(2);
-
     expect(button).toBeInTheDocument();
   });
 
-  it('should be enabled when playerCount is truthy', () => {
-    const button = renderButton(2);
+  it('should call onClick when clicked', () => {
+    button.click();
 
-    expect(button).not.toBeDisabled();
+    expect(handleClickMock).toHaveBeenCalled();
   });
 
-  it('should be disabled when playerCount is falsy', () => {
-    const button = renderButton("");
-
-    expect(button).toBeDisabled();
+  it('should not be disabled by default', () => {
+    expect(button).not.toBeDisabled();
   });
 });
