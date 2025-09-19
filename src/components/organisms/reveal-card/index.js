@@ -20,6 +20,7 @@ const RevealCard = ({ distributions, setStep, step, playerCount }) => {
       <Button
         onClick={handleReveal}
         label={`Reveal player ${step}'s numbers`}
+        disabled={numbers.length > 0}
       />
       {numbers.length > 0 && (
         <div>
@@ -30,10 +31,10 @@ const RevealCard = ({ distributions, setStep, step, playerCount }) => {
           </ul>
         </div>
       )}
-      {step === playerCount && numbers.length &&
+      {numbers.length > 0 && step === playerCount &&
         <p>All numbers distributed! Enjoy the game!</p>
       }
-      {numbers.length && step < playerCount &&
+      {numbers.length > 0 && step < playerCount &&
         <Button
           onClick={handleNextPlayer}
           label={`Next Player`}
