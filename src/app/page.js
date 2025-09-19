@@ -1,16 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import PlayersDropdown from '@/components/atoms/players-dropdown';
-import styles from './entry.module.css';
 import Button from '@/components/atoms/button';
+import PlayersDropdown from '@/components/atoms/players-dropdown';
+import RemainderWarning from '@/components/molecules/remainder-warning';
+import styles from './entry.module.css';
 
 const Page = () => {
   const [playerCount, setPlayerCount] = useState("");
   const [hasRemainder, setHasRemainder] = useState(false);
-
-  const ballNumbers = Array.from({ length: 15 }, (_, i) => i + 1);
-  const playerOptions = ballNumbers.slice(1);
+  const [useRemainder, setUseRemainder] = useState(true);
 
   return (
     <main className={styles.main}>
@@ -19,16 +18,15 @@ const Page = () => {
           playerCount={playerCount}
           setPlayerCount={setPlayerCount}
           setHasRemainder={setHasRemainder}
-          playerOptions={playerOptions}
         />
         {hasRemainder && (
-          <div>
-          <p className={styles.warning}>There will be leftover numbers after distribution.</p>
-          <p>Would you like to distribute these numbers to players, or discard them from the game?</p>
-          </div>
+          <RemainderWarning
+            setUseRemainder={setUseRemainder}
+          />
         )}
         <Button
           playerCount={playerCount}
+          useRemainder={useRemainder}
         />
       </div>
     </main>

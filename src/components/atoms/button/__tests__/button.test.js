@@ -4,7 +4,11 @@ import Button from '../index';
 
 describe('Button', () => {
   const renderButton = (playerCount) => {
-    render(<Button playerCount={playerCount} />);
+    render(
+      <Button
+        playerCount={playerCount}
+        useRemainder={true}
+      />);
     return screen.getByRole('button', { name: /distribute ball numbers/i });
   };
 
@@ -21,7 +25,7 @@ describe('Button', () => {
   });
 
   it('should be disabled when playerCount is falsy', () => {
-    const button = renderButton(null);
+    const button = renderButton("");
 
     expect(button).toBeDisabled();
   });
