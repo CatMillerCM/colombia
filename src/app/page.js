@@ -23,6 +23,7 @@ const Page = () => {
             distributions={distributions}
             setStep={setStep}
             step={step}
+            playerCount={playerCount}
           />
         ) : (
           <div className={styles.entry}>

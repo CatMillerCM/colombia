@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import Button from '@/components/atoms/button';
 
-const RevealCard = ({ distributions, setStep, step }) => {
+const RevealCard = ({ distributions, setStep, step, playerCount }) => {
   const [numbers, setNumbers] = useState([]);
 
   const handleReveal = () => {
@@ -30,7 +30,10 @@ const RevealCard = ({ distributions, setStep, step }) => {
           </ul>
         </div>
       )}
-      {numbers.length &&
+      {step === playerCount && numbers.length &&
+        <p>All numbers distributed! Enjoy the game!</p>
+      }
+      {numbers.length && step < playerCount &&
         <Button
           onClick={handleNextPlayer}
           label={`Next Player`}
@@ -43,7 +46,8 @@ const RevealCard = ({ distributions, setStep, step }) => {
 RevealCard.propTypes = {
   distributions: PropTypes.object.isRequired,
   setStep: PropTypes.func.isRequired,
-  step: PropTypes.number.isRequired
+  step: PropTypes.number.isRequired,
+  playerCount: PropTypes.number.isRequired
 };
 
 export default RevealCard;
