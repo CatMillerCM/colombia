@@ -3,9 +3,10 @@ import React from 'react';
 import Button from '@/components/atoms/button';
 import distributeNumbers from '@/utils/distribute-numbers';
 
-const DistributeButton = ({ playerCount, useRemainder }) => {
+const DistributeButton = ({ playerCount, useRemainder, setDistributions }) => {
   const handleDistribute = () => {
     const distributions = distributeNumbers(playerCount, useRemainder);
+    setDistributions(distributions);
   };
 
   return (
@@ -19,7 +20,8 @@ const DistributeButton = ({ playerCount, useRemainder }) => {
 
 DistributeButton.propTypes = {
   playerCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  useRemainder: PropTypes.bool.isRequired
+  useRemainder: PropTypes.bool.isRequired,
+  setDistributions: PropTypes.func.isRequired
 };
 
 export default DistributeButton;

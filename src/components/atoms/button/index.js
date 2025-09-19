@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './button.module.css';
-import distributeNumbers from '@/utils/distribute-numbers';
 
 const Button = ({ onClick, label, disabled = false }) => {
   return (
