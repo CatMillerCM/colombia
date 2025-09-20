@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Dropdown from '@/components/atoms/dropdown';
 import checkIfRemainder from '@/utils/check-if-remainder';
 import styles from './players-dropdown.module.css';
 
@@ -13,16 +14,12 @@ const PlayersDropdown = ({ playerCount, setPlayerCount, setHasRemainder }) => {
   };
 
   return (
-    <select
-      className={styles.input}
+    <Dropdown
       value={playerCount}
       onChange={handleOnChange}
-    >
-      <option value="" disabled>Select number of players</option>
-      {playerOptions.map((option) => (
-        <option key={option} value={option}>{option}</option>
-      ))}
-    </select>
+      label="Select number of players"
+      options={playerOptions}
+    />
   )
 };
 

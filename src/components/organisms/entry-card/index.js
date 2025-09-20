@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import PlayersDropdown from '@/components/atoms/players-dropdown';
+import PlayersDropdown from '@/components/molecules/players-dropdown';
 import RemainderWarning from '@/components/molecules/remainder-warning';
 import DistributeButton from '@/components/molecules/distribute-button';
 import styles from './entry-card.module.css';
@@ -24,9 +24,7 @@ const EntryCard = ({
         setHasRemainder={setHasRemainder}
       />
       {hasRemainder && (
-        <RemainderWarning
-          setUseRemainder={setUseRemainder}
-        />
+        <RemainderWarning setUseRemainder={setUseRemainder} />
       )}
       <DistributeButton
         playerCount={playerCount}
