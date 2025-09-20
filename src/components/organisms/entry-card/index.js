@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import PlayersDropdown from '@/components/atoms/players-dropdown';
 import RemainderWarning from '@/components/molecules/remainder-warning';
@@ -8,13 +10,12 @@ import styles from './entry-card.module.css';
 const EntryCard = ({
   playerCount,
   setPlayerCount,
-  hasRemainder,
-  setHasRemainder,
-  useRemainder,
-  setUseRemainder,
   setDistributions,
   setStep
 }) => {
+  const [hasRemainder, setHasRemainder] = useState(false);
+  const [useRemainder, setUseRemainder] = useState(true);
+
   return (
     <div className={styles.entry}>
       <PlayersDropdown
@@ -40,10 +41,6 @@ const EntryCard = ({
 EntryCard.propTypes = {
   playerCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   setPlayerCount: PropTypes.func.isRequired,
-  hasRemainder: PropTypes.bool.isRequired,
-  setHasRemainder: PropTypes.func.isRequired,
-  useRemainder: PropTypes.bool.isRequired,
-  setUseRemainder: PropTypes.func.isRequired,
   setDistributions: PropTypes.func.isRequired,
   setStep: PropTypes.func.isRequired
 };

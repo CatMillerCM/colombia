@@ -8,8 +8,6 @@ import styles from './page.module.css';
 
 const Page = () => {
   const [playerCount, setPlayerCount] = useState("");
-  const [hasRemainder, setHasRemainder] = useState(false);
-  const [useRemainder, setUseRemainder] = useState(true);
   const [distributions, setDistributions] = useState({});
   const [step, setStep] = useState('entry');
 
@@ -20,10 +18,6 @@ const Page = () => {
           <EntryCard
             playerCount={playerCount}
             setPlayerCount={setPlayerCount}
-            hasRemainder={hasRemainder}
-            setHasRemainder={setHasRemainder}
-            useRemainder={useRemainder}
-            setUseRemainder={setUseRemainder}
             setDistributions={setDistributions}
             setStep={setStep}
           />
