@@ -13,19 +13,12 @@ const Page = () => {
   const [hasRemainder, setHasRemainder] = useState(false);
   const [useRemainder, setUseRemainder] = useState(true);
   const [distributions, setDistributions] = useState({});
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState('entry');
 
   return (
     <main className={styles.main}>
       <div>
-        {distributions && Object.keys(distributions).length > 0 ? (
-          <RevealCard
-            distributions={distributions}
-            setStep={setStep}
-            step={step}
-            playerCount={playerCount}
-          />
-        ) : (
+        {step === 'entry' && (
           <div className={styles.entry}>
             <PlayersDropdown
               playerCount={playerCount}
@@ -41,8 +34,31 @@ const Page = () => {
               playerCount={playerCount}
               useRemainder={useRemainder}
               setDistributions={setDistributions}
+              setStep={setStep}
             />
           </div>
+        )}
+        {step === 'discarded' && (
+          <div>
+            <h2>Please discard the following numbers from the game:</h2>
+            <ul>
+              {distributions.discarded.map((number, index) => (
+                <li key={index}>{number}</li>
+              ))}
+            </ul>
+            <Button
+              onClick={() => setStep(1)}
+              label="Continue to player distributions"
+            />
+          </div>
+        )}
+        {typeof step === 'number' && (
+          <RevealCard
+            distributions={distributions}
+            setStep={setStep}
+            step={step}
+            playerCount={playerCount}
+          />
         )}
       </div>
     </main>
