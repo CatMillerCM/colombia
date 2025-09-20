@@ -1,12 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import PlayersDropdown from '@/components/atoms/players-dropdown';
-import DistributeButton from '@/components/molecules/distribute-button';
-import RemainderWarning from '@/components/molecules/remainder-warning';
-import styles from './entry.module.css';
-import Button from '@/components/atoms/button';
+import EntryCard from '@/components/organisms/entry-card';
+import DiscardedCard from '@/components/organisms/discarded-card';
 import RevealCard from '@/components/organisms/reveal-card';
+import styles from './page.module.css';
 
 const Page = () => {
   const [playerCount, setPlayerCount] = useState("");
@@ -19,38 +17,22 @@ const Page = () => {
     <main className={styles.main}>
       <div>
         {step === 'entry' && (
-          <div className={styles.entry}>
-            <PlayersDropdown
-              playerCount={playerCount}
-              setPlayerCount={setPlayerCount}
-              setHasRemainder={setHasRemainder}
-            />
-            {hasRemainder && (
-              <RemainderWarning
-                setUseRemainder={setUseRemainder}
-              />
-            )}
-            <DistributeButton
-              playerCount={playerCount}
-              useRemainder={useRemainder}
-              setDistributions={setDistributions}
-              setStep={setStep}
-            />
-          </div>
+          <EntryCard
+            playerCount={playerCount}
+            setPlayerCount={setPlayerCount}
+            hasRemainder={hasRemainder}
+            setHasRemainder={setHasRemainder}
+            useRemainder={useRemainder}
+            setUseRemainder={setUseRemainder}
+            setDistributions={setDistributions}
+            setStep={setStep}
+          />
         )}
         {step === 'discarded' && (
-          <div>
-            <h2>Please discard the following numbers from the game:</h2>
-            <ul>
-              {distributions.discarded.map((number, index) => (
-                <li key={index}>{number}</li>
-              ))}
-            </ul>
-            <Button
-              onClick={() => setStep(1)}
-              label="Continue to player distributions"
-            />
-          </div>
+          <DiscardedCard
+            distributions={distributions}
+            setStep={setStep}
+          />
         )}
         {typeof step === 'number' && (
           <RevealCard
