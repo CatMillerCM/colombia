@@ -11,7 +11,7 @@ const Numbers = ({ numbers }) => {
   );
 };
 
-Numbers.PropTypes = {
+Numbers.propTypes = {
   numbers: PropTypes.arrayOf(PropTypes.number).isRequired
 };
 
