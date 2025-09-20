@@ -1,18 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@/components/atoms/button';
+import Numbers from '@/components/atoms/numbers';
+import styles from './discarded-card.module.css';
 
 const DiscardedCard = ({ distributions, setStep }) => {
+  const handleClick = () => {
+    setStep(1);
+  };
+
   return (
     <div>
       <h2>Please discard the following numbers from the game:</h2>
-      <ul>
-        {distributions.discarded.map((number, index) => (
-          <li key={index}>{number}</li>
-        ))}
-      </ul>
+      <Numbers
+        numbers={distributions.discarded}
+      />
       <Button
-        onClick={() => setStep(1)}
+        onClick={handleClick}
         label="Continue to player distributions"
       />
     </div>
