@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Intro from '@/components/molecules/intro';
 import PlayersDropdown from '@/components/molecules/players-dropdown';
 import RemainderWarning from '@/components/molecules/remainder-warning';
 import DistributeButton from '@/components/molecules/distribute-button';
@@ -18,6 +19,7 @@ const EntryCard = ({
 
   return (
     <div className={styles.entry}>
+      <Intro />
       <PlayersDropdown
         playerCount={playerCount}
         setPlayerCount={setPlayerCount}
