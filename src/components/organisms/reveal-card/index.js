@@ -31,8 +31,15 @@ const RevealCard = ({ distributions, setStep, step, playerCount }) => {
           </ul>
         </div>
       )}
-      {numbers.length > 0 && step === playerCount &&
-        <p>All numbers distributed! Enjoy the game!</p>
+      {numbers.length > 0 && step === playerCount && (
+        <div>
+          <p>All numbers distributed! Enjoy the game!</p>
+          <Button
+            onClick={() => setStep('entry')}
+            label="Restart"
+          />
+        </div>
+      )
       }
       {numbers.length > 0 && step < playerCount &&
         <Button
