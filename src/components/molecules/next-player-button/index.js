@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Button from '@/components/atoms/button';
 
-const NextPlayerButton = ({ setNumbers, setStep }) => {
+const NextPlayerButton = ({ setNumbers, setStep, step }) => {
   const handleClick = () => {
     setNumbers([]);
     setStep(step + 1);
@@ -18,7 +18,8 @@ const NextPlayerButton = ({ setNumbers, setStep }) => {
 
 NextPlayerButton.PropTypes = {
   setNumbers: PropTypes.func.isRequired,
-  setStep: PropTypes.func.isRequired
+  setStep: PropTypes.func.isRequired,
+  step: PropTypes.number.isRequired
 };
 
 export default NextPlayerButton;

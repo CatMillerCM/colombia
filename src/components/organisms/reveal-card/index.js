@@ -18,25 +18,19 @@ const RevealCard = ({ distributions, setStep, step, playerCount }) => {
         distributions={distributions}
         step={step}
       />
-      {numbers.length > 0 && (
-        <Numbers
-          numbers={numbers}
-        />
+      {numbers?.length > 0 && (
+        <>
+          <Numbers numbers={numbers} />
+          {step === playerCount ? (
+            <>
+              <p>All numbers distributed! Enjoy the game!</p>
+              <RestartButton setStep={setStep} />
+            </>
+          ) : (
+            <NextPlayerButton setNumbers={setNumbers} setStep={setStep} step={step}/>
+          )}
+        </>
       )}
-      {numbers.length > 0 && step === playerCount && (
-        <div>
-          <p>All numbers distributed! Enjoy the game!</p>
-          <RestartButton
-            setStep={setStep}
-          />
-        </div>
-      )}
-      {numbers.length > 0 && step < playerCount &&
-        <NextPlayerButton
-          setNumbers={setNumbers}
-          setStep={setStep}
-        />
-      }
     </div>
   );
 };
