@@ -16,7 +16,7 @@ const NextPlayerButton = ({ setNumbers, setStep, step }) => {
   );
 };
 
-NextPlayerButton.PropTypes = {
+NextPlayerButton.propTypes = {
   setNumbers: PropTypes.func.isRequired,
   setStep: PropTypes.func.isRequired,
   step: PropTypes.number.isRequired

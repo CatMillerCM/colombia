@@ -17,7 +17,7 @@ describe('DistributeButton', () => {
         setStep={setStepMock}
     />)
 
-    const button = screen.getByRole('button');
+    const button = screen.getByRole('button', { name: /distribute ball numbers/i });
     fireEvent.click(button);
   };
 
