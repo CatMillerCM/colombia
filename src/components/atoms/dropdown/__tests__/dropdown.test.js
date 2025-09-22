@@ -30,7 +30,7 @@ describe('Dropdown', () => {
     expect(selectBox).toHaveValue('');
   });
 
-  it('renders all options and disabled placeholder option', () => {
+  it('should render all options and disabled placeholder option', () => {
     const dropdownOptions = screen.getAllByRole('option');
     const optionValues = dropdownOptions.map(option => option.textContent);
     const placeholderOption = screen.getByRole('option', { name: label });
