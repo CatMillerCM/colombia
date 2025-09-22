@@ -4,12 +4,12 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import Toggle from '../index';
 
 describe('Toggle atom', () => {
-  const onChangeMock = jest.fn();
+  const handleChangeMock = jest.fn();
 
   beforeEach(() => {
     render(
       <Toggle
-        onChange={onChangeMock}
+        onChange={handleChangeMock}
         leftLabel="Foo"
         rightLabel="Bar"
       />
@@ -21,11 +21,11 @@ describe('Toggle atom', () => {
     expect(screen.queryByText('Bar')).toBeInTheDocument();
   });
 
-  it('should call onChange when toggled', () => {
+  it('should call handleChange when toggled', () => {
     const checkbox = screen.getByRole('checkbox');
 
     fireEvent.click(checkbox);
 
-    expect(onChangeMock).toHaveBeenCalled();
+    expect(handleChangeMock).toHaveBeenCalled();
   });
 });

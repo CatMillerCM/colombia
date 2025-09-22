@@ -7,7 +7,7 @@ import styles from './players-dropdown.module.css';
 const PlayersDropdown = ({ playerCount, setPlayerCount, setHasRemainder }) => {
   const playerOptions = Array.from({ length: 14 }, (_, i) => i + 2);
 
-  const handleOnChange = (e) => {
+  const handleChange = (e) => {
     setPlayerCount(Number(e.target.value));
     const hasRemainder = checkIfRemainder(Number(e.target.value), 15);
     setHasRemainder(hasRemainder);
@@ -16,7 +16,7 @@ const PlayersDropdown = ({ playerCount, setPlayerCount, setHasRemainder }) => {
   return (
     <Dropdown
       value={playerCount}
-      onChange={handleOnChange}
+      onChange={handleChange}
       label="Select number of players"
       options={playerOptions}
     />
