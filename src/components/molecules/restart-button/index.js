@@ -15,7 +15,7 @@ const RestartButton = ({ setStep }) => {
   );
 };
 
-RestartButton.PropTypes = {
+RestartButton.propTypes = {
   setStep: PropTypes.func.isRequired
 };
 

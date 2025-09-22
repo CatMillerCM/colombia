@@ -58,7 +58,7 @@ describe('DistributeButton', () => {
 		  expect(setDistributionsMock).toHaveBeenCalledWith(distributionsMockWithDiscarded);
     });
 
-    it('should call setStep with 1', () => {
+    it('should call setStep with "discarded"', () => {
       expect(setStepMock).toHaveBeenCalledWith('discarded');
     });
   });
