@@ -4,7 +4,7 @@ import Button from '@/components/atoms/button';
 import distributeNumbers from '@/utils/distribute-numbers';
 
 const DistributeButton = ({ playerCount, useRemainder, setDistributions, setStep }) => {
-  const handleDistribute = () => {
+  const handleClick = () => {
     const distributions = distributeNumbers(playerCount, useRemainder);
     setDistributions(distributions);
     setStep(distributions.discarded.length > 0 ? 'discarded' : 1);
@@ -12,7 +12,7 @@ const DistributeButton = ({ playerCount, useRemainder, setDistributions, setStep
 
   return (
     <Button
-      onClick={handleDistribute}
+      onClick={handleClick}
       label="Distribute ball numbers"
       disabled={!playerCount}
     />
