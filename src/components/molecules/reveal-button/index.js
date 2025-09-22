@@ -16,7 +16,7 @@ const RevealButton = ({ numbers, setNumbers, distributions, step }) => {
   );
 };
 
-RevealButton.PropTypes = {
+RevealButton.propTypes = {
   numbers: PropTypes.arrayOf(PropTypes.number).isRequired,
   setNumbers: PropTypes.func.isRequired,
   distributions: PropTypes.object.isRequired,
