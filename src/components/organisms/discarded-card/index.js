@@ -13,7 +13,7 @@ const DiscardedCard = ({ distributions, setStep }) => {
     <div>
       <h2>Please discard the following numbers from the game:</h2>
       <Numbers numbers={distributions.discarded} />
-      <ContinueToDistributionsButton />
+      <ContinueToDistributionsButton setStep={setStep}/>
     </div>
   );
 };
