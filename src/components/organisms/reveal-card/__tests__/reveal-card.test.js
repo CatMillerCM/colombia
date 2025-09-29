@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, waitFor } from '@testing-library/react';
 import Numbers from '@/components/atoms/numbers';
 import RestartButton from '@/components/molecules/restart-button';

@@ -1,8 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import Numbers from '@/components/atoms/numbers';
 import ContinueToDistributionsButton from '@/components/molecules/continue-to-distributions-button';
-import styles from './discarded-card.module.css';
 
 const DiscardedCard = ({ distributions, setStep }) => {
   const handleClick = () => {

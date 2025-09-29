@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import Button from '@/components/atoms/button';
+import { useState } from 'react';
 import NextPlayerButton from '@/components/molecules/next-player-button';
 import RestartButton from '@/components/molecules/restart-button';
 import Numbers from '@/components/atoms/numbers';

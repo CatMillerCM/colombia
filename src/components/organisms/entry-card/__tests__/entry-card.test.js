@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, waitFor } from '@testing-library/react';
 import RemainderWarning from '@/components/molecules/remainder-warning';
 import PlayersDropdown from '@/components/molecules/players-dropdown';

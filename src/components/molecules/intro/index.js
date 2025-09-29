@@ -1,6 +1,3 @@
-import React from 'react';
-import styles from './intro.module.css';
-
 const Intro = () => (
   <div>
     <h1>Welcome to the Game!</h1>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Intro from '@/components/molecules/intro';
 import PlayersDropdown from '@/components/molecules/players-dropdown';

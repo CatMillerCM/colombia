@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import Toggle from '../../atoms/toggle';
-import styles from './remainder-warning.module.css';
 
 const RemainderWarning = ({ setUseRemainder }) => (
   <div>
