@@ -11,10 +11,10 @@ describe('PlayersDropdown', () => {
 
   const renderAndSelectOption = (value) => {
     render(<PlayersDropdown
-        playerCount={""}
-        setPlayerCount={setPlayerCountMock}
-        setHasRemainder={setHasRemainderMock}
-    />)
+      playerCount=""
+      setPlayerCount={setPlayerCountMock}
+      setHasRemainder={setHasRemainderMock}
+    />);
 
     const dropdown = screen.getByRole('combobox');
 

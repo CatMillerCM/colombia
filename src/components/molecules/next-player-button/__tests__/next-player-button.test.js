@@ -14,7 +14,7 @@ describe('NextPlayerButton', () => {
         setNumbers={setNumbersMock}
         setStep={setStepMock}
         step={step}
-      />)
+      />);
 
       const button = screen.getByRole('button', { name: /next player/i });
       fireEvent.click(button);

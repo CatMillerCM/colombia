@@ -2,18 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './button.module.css';
 
-const Button = ({ onClick, label, disabled = false }) => {
-  return (
-    <button
-      className={styles.button}
-      type="button"
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {label}
-    </button>
-  )
-};
+const Button = ({ onClick, label, disabled = false }) => (
+  <button
+    className={styles.button}
+    type="button"
+    onClick={onClick}
+    disabled={disabled}
+  >
+    {label}
+  </button>
+);
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,

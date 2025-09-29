@@ -7,15 +7,15 @@ jest.mock('@/utils/distribute-numbers');
 
 describe('DistributeButton', () => {
   const setDistributionsMock = jest.fn();
-	const setStepMock = jest.fn();
+  const setStepMock = jest.fn();
 
   const renderAndClickButton = (playerCount, useRemainder) => {
     render(<DistributeButton
-        playerCount={playerCount}
-        useRemainder={useRemainder}
-        setDistributions={setDistributionsMock}
-        setStep={setStepMock}
-    />)
+      playerCount={playerCount}
+      useRemainder={useRemainder}
+      setDistributions={setDistributionsMock}
+      setStep={setStepMock}
+    />);
 
     const button = screen.getByRole('button', { name: /distribute ball numbers/i });
     fireEvent.click(button);

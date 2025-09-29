@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Dropdown from '../index';
@@ -12,7 +11,7 @@ describe('Dropdown', () => {
   beforeEach(() => {
     render(
       <Dropdown
-        value={''}
+        value=""
         onChange={onChangeMock}
         label={label}
         options={options}
@@ -32,7 +31,7 @@ describe('Dropdown', () => {
 
   it('should render all options and disabled placeholder option', () => {
     const dropdownOptions = screen.getAllByRole('option');
-    const optionValues = dropdownOptions.map(option => option.textContent);
+    const optionValues = dropdownOptions.map((option) => option.textContent);
     const placeholderOption = screen.getByRole('option', { name: label });
 
     expect(dropdownOptions.length).toBe(options.length + 1);

@@ -17,7 +17,7 @@ describe('EntryCard', () => {
     RemainderWarning.mockReturnValue(<div />);
     PlayersDropdown.mockImplementation(jest.fn(({ setHasRemainder }) => {
       setHasRemainderMock.mockImplementation(setHasRemainder);
-    return <div />;
+      return <div />;
     }));
 
     render(

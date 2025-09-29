@@ -35,7 +35,7 @@ describe('RevealCard', () => {
     NextPlayerButton.mockReturnValue(<div />);
     RevealButton.mockImplementation(jest.fn(({ setNumbers }) => {
       setNumbersMock.mockImplementation(setNumbers);
-    return <div />;
+      return <div />;
     }));
 
     renderRevealCard(step, playerCount);
@@ -65,10 +65,10 @@ describe('RevealCard', () => {
     });
 
     describe('and the step number is equal to the player count', () => {
-      beforeEach(async() => {
+      beforeEach(async () => {
         playerCount = 2;
         renderRevealCard(step, playerCount);
-        
+
         await waitFor(() => setNumbersMock([1, 2]));
       });
 

@@ -3,7 +3,9 @@ import React from 'react';
 import Button from '@/components/atoms/button';
 import distributeNumbers from '@/utils/distribute-numbers';
 
-const DistributeButton = ({ playerCount, useRemainder, setDistributions, setStep }) => {
+const DistributeButton = ({
+  playerCount, useRemainder, setDistributions, setStep
+}) => {
   const handleClick = () => {
     const distributions = distributeNumbers(playerCount, useRemainder);
     setDistributions(distributions);

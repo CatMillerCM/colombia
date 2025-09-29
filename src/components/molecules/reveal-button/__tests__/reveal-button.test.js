@@ -7,7 +7,7 @@ describe('RevealButton', () => {
 
   describe('when clicked', () => {
     const numbers = [];
-    const distributions = { playerPots: [[1, 2], [3, 4], [5]], discarded: [5] }
+    const distributions = { playerPots: [[1, 2], [3, 4], [5]], discarded: [5] };
     const step = 2;
 
     beforeEach(() => {
@@ -16,7 +16,7 @@ describe('RevealButton', () => {
         setNumbers={setNumbersMock}
         distributions={distributions}
         step={step}
-      />)
+      />);
 
       const button = screen.getByRole('button', { name: /reveal player 2's numbers/i });
       fireEvent.click(button);

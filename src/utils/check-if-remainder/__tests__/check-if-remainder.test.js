@@ -14,7 +14,7 @@ describe('checkIfRemainder', () => {
   });
 
   describe('when ball numbers are NOT divisible by player count', () => {
-  const playerCount = 4;
+    const playerCount = 4;
 
     it('should return true', () => {
       const result = checkIfRemainder(playerCount, ballCount);

@@ -9,7 +9,7 @@ describe('RestartButton', () => {
     beforeEach(() => {
       render(<RestartButton
         setStep={setStepMock}
-      />)
+      />);
 
       const button = screen.getByRole('button', { name: /restart/i });
       fireEvent.click(button);

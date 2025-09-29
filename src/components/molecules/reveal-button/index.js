@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Button from '@/components/atoms/button';
 
-const RevealButton = ({ numbers, setNumbers, distributions, step }) => {
+const RevealButton = ({
+  numbers, setNumbers, distributions, step
+}) => {
   const handleClick = () => {
     setNumbers(distributions.playerPots[step - 1]);
   };

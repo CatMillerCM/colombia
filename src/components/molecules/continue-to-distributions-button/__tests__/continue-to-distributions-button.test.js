@@ -9,7 +9,7 @@ describe('ContinueToDistributionsButton', () => {
     beforeEach(() => {
       render(<ContinueToDistributionsButton
         setStep={setStepMock}
-      />)
+      />);
 
       const button = screen.getByRole('button', { name: /continue to player distributions/i });
       fireEvent.click(button);

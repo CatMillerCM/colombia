@@ -7,7 +7,7 @@ import RevealCard from '@/components/organisms/reveal-card';
 import styles from './page.module.css';
 
 const Page = () => {
-  const [playerCount, setPlayerCount] = useState("");
+  const [playerCount, setPlayerCount] = useState('');
   const [distributions, setDistributions] = useState({});
   const [step, setStep] = useState('entry');
 

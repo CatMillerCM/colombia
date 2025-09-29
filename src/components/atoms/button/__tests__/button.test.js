@@ -11,9 +11,10 @@ describe('Button', () => {
       <Button
         onClick={handleClickMock}
         label="Button Label"
-      />);
+      />
+    );
 
-      button = screen.getByRole('button', { name: /button label/i });
+    button = screen.getByRole('button', { name: /button label/i });
   });
 
   it('should render a button with correct text', () => {

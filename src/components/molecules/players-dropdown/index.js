@@ -20,7 +20,7 @@ const PlayersDropdown = ({ playerCount, setPlayerCount, setHasRemainder }) => {
       label="Select number of players"
       options={playerOptions}
     />
-  )
+  );
 };
 
 PlayersDropdown.propTypes = {
