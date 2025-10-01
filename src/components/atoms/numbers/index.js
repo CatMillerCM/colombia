@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 
 const Numbers = ({ numbers }) => (
   <ul>
-    {numbers.map((number, index) => (
-      <li key={index}>{number}</li>
+    {numbers.map((number) => (
+      <li key={number}>{number}</li>
     ))}
   </ul>
 );

@@ -29,11 +29,11 @@ describe('DistributeButton', () => {
     });
 
     it('should call distributeNumbers util with playerCount and useRemainder as true', () => {
-		  expect(distributeNumbers).toHaveBeenCalledWith(3, true);
+      expect(distributeNumbers).toHaveBeenCalledWith(3, true);
     });
 
     it('should call setDistributions with result', () => {
-		  expect(setDistributionsMock).toHaveBeenCalledWith(distributionsMockWithoutDiscarded);
+      expect(setDistributionsMock).toHaveBeenCalledWith(distributionsMockWithoutDiscarded);
     });
 
     it('should call setStep with 1', () => {
@@ -50,11 +50,11 @@ describe('DistributeButton', () => {
     });
 
     it('should call distributeNumbers util with playerCount and useRemainder as false', () => {
-		  expect(distributeNumbers).toHaveBeenCalledWith(2, false);
+      expect(distributeNumbers).toHaveBeenCalledWith(2, false);
     });
 
     it('should call setDistributions with result', () => {
-		  expect(setDistributionsMock).toHaveBeenCalledWith(distributionsMockWithDiscarded);
+      expect(setDistributionsMock).toHaveBeenCalledWith(distributionsMockWithDiscarded);
     });
 
     it('should call setStep with "discarded"', () => {

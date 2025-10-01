@@ -20,7 +20,12 @@ const RevealButton = ({
 RevealButton.propTypes = {
   numbers: PropTypes.arrayOf(PropTypes.number).isRequired,
   setNumbers: PropTypes.func.isRequired,
-  distributions: PropTypes.object.isRequired,
+  distributions: PropTypes.shape({
+    playerPots: PropTypes.arrayOf(
+      PropTypes.arrayOf(PropTypes.number)
+    ).isRequired,
+    discarded: PropTypes.arrayOf(PropTypes.number).isRequired
+  }).isRequired,
   step: PropTypes.number.isRequired
 };
 

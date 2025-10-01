@@ -17,7 +17,8 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'comma-dangle': ['error', 'never'],
     'eol-last': ['error', 'always'],
-    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }]
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
+    'no-plusplus': 'off'
   },
   settings: {
     'import/resolver': {

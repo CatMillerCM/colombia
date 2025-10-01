@@ -5,19 +5,25 @@ import RestartButton from '@/components/molecules/restart-button';
 import Numbers from '@/components/atoms/numbers';
 import RevealButton from '@/components/molecules/reveal-button';
 
-const RevealCard = ({ distributions, setStep, step, playerCount }) => {
+const RevealCard = ({
+  distributions, setStep, step, playerCount
+}) => {
   const [numbers, setNumbers] = useState([]);
 
   return (
     <div>
-      <h2>Pass the device to Player {step}</h2>
+      <h2>
+        Pass the device to Player
+        {' '}
+        {step}
+      </h2>
       <RevealButton
         numbers={numbers}
         setNumbers={setNumbers}
         distributions={distributions}
         step={step}
       />
-      {numbers?.length > 0 && (
+      {numbers.length > 0 && (
         <>
           <Numbers numbers={numbers} />
           {step === playerCount ? (
@@ -26,7 +32,7 @@ const RevealCard = ({ distributions, setStep, step, playerCount }) => {
               <RestartButton setStep={setStep} />
             </>
           ) : (
-            <NextPlayerButton setNumbers={setNumbers} setStep={setStep} step={step}/>
+            <NextPlayerButton setNumbers={setNumbers} setStep={setStep} step={step} />
           )}
         </>
       )}
@@ -35,7 +41,12 @@ const RevealCard = ({ distributions, setStep, step, playerCount }) => {
 };
 
 RevealCard.propTypes = {
-  distributions: PropTypes.object.isRequired,
+  distributions: PropTypes.shape({
+    playerPots: PropTypes.arrayOf(
+      PropTypes.arrayOf(PropTypes.number)
+    ).isRequired,
+    discarded: PropTypes.arrayOf(PropTypes.number).isRequired
+  }).isRequired,
   setStep: PropTypes.func.isRequired,
   step: PropTypes.number.isRequired,
   playerCount: PropTypes.number.isRequired

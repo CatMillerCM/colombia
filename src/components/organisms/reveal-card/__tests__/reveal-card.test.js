@@ -15,9 +15,8 @@ describe('RevealCard', () => {
   const setNumbersMock = jest.fn();
   const distributions = { playerPots: [[1, 2], [3, 4]], discarded: [5] };
   const step = 2;
-  let playerCount = 4;
 
-  const renderRevealCard = (step, playerCount) => {
+  const renderRevealCard = (playerCount) => {
     render(
       <RevealCard
         distributions={distributions}
@@ -37,7 +36,8 @@ describe('RevealCard', () => {
       return <div />;
     }));
 
-    renderRevealCard(step, playerCount);
+    const playerCount = 4;
+    renderRevealCard(playerCount);
   });
 
   describe('when the numbers array is empty', () => {
@@ -65,8 +65,8 @@ describe('RevealCard', () => {
 
     describe('and the step number is equal to the player count', () => {
       beforeEach(async () => {
-        playerCount = 2;
-        renderRevealCard(step, playerCount);
+        const playerCount = 2;
+        renderRevealCard(playerCount);
 
         await waitFor(() => setNumbersMock([1, 2]));
       });

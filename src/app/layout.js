@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
 
@@ -14,12 +15,16 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={montserrat.className}>
-        {children}
-      </body>
-    </html>
-  );
-}
+const RootLayout = ({ children }) => (
+  <html lang="en">
+    <body className={montserrat.className}>
+      {children}
+    </body>
+  </html>
+);
+
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired
+};
+
+export default RootLayout;

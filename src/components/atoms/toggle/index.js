@@ -15,12 +15,14 @@ const Toggle = ({ onChange, leftLabel, rightLabel }) => {
   return (
     <div className={styles.toggleRow}>
       <span className={checked ? styles.toggleLabelActive : styles.toggleLabel}>{leftLabel}</span>
-      <label className={styles.toggleSwitch}>
+      <label className={styles.toggleSwitch} htmlFor="toggle">
         <input
           type="checkbox"
+          id="toggle"
           checked={checked}
           onChange={handleChange}
           className={styles.toggleInput}
+          aria-label="Toggle switch"
         />
         <span
           className={
