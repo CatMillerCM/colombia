@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import styles from './numbers.module.css';
 
 const Numbers = ({ numbers }) => (
-  <ul>
+  <ul className={styles.numbers}>
     {numbers.map((number) => (
       <li key={number}>{number}</li>
     ))}

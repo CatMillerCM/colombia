@@ -4,6 +4,7 @@ import NextPlayerButton from '@/components/molecules/next-player-button';
 import RestartButton from '@/components/molecules/restart-button';
 import Numbers from '@/components/atoms/numbers';
 import RevealButton from '@/components/molecules/reveal-button';
+import styles from './reveal-card.module.css';
 
 const RevealCard = ({
   distributions, setStep, step, playerCount
@@ -12,10 +13,14 @@ const RevealCard = ({
 
   return (
     <div>
-      <h2>
-        Pass the device to Player
+      <h2 className={styles.title}>
+        Pass the device to
         {' '}
-        {step}
+        <span className={styles.playerNumber}>
+          Player
+          {' '}
+          {step}
+        </span>
       </h2>
       <RevealButton
         numbers={numbers}
