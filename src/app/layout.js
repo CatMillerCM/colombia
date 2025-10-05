@@ -9,8 +9,8 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata = {
-  title: '',
-  description: '',
+  title: 'Pool Request',
+  description: 'Distribute ball numbers to players in secrecy.',
   icons: {
     icon: '/favicon.ico'
   }
