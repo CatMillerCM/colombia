@@ -1,4 +1,5 @@
 .playerNumber {
+  display: block;
   font-weight: bold;
   text-decoration: underline;
 }
