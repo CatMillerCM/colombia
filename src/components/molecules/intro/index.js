@@ -1,8 +1,9 @@
 const Intro = () => (
   <div>
-    <h1>Welcome to the Game!</h1>
-    <p>Lorem ipsum - intro to game</p>
-    <p>Select the number of players and start distributing ball numbers.</p>
+    <h1>Pool Request</h1>
+    <p>Each player gets a secret set of balls to protect.</p>
+    <p>Sink the others, survive the table.</p>
+    <p>Select the number of players and begin the distribution!</p>
   </div>
 );
 
