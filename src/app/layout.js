@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import { Montserrat } from 'next/font/google';
+import { Roboto_Condensed } from 'next/font/google';
 import './globals.css';
 
-const montserrat = Montserrat({
+const robotoCondensed = Roboto_Condensed({
   subsets: ['latin'],
   weight: ['400', '700']
 });
@@ -17,7 +17,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => (
   <html lang="en">
-    <body className={montserrat.className}>
+    <body className={robotoCondensed.className}>
       {children}
     </body>
   </html>
