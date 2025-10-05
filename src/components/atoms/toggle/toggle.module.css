@@ -31,11 +31,11 @@
 
 .toggleSlider {
   position: absolute;
-  inset: 0;
   border-radius: 1.5rem;
   background: white;
   cursor: pointer;
   transition: background 0.2s;
+  inset: 0;
 }
 
 .toggleSliderChecked {
