@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Dropdown from '../index';
+import Dropdown from '..';
 
 describe('Dropdown', () => {
   const onChangeMock = jest.fn();

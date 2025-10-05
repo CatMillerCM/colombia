@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Button from '../index';
+import Button from '..';
 
 describe('Button', () => {
   const handleClickMock = jest.fn();

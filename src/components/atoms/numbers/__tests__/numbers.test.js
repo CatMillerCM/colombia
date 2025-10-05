@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Numbers from '../index';
+import Numbers from '..';
 
 describe('Numbers', () => {
   const numbers = [1, 2, 3, 4, 5];

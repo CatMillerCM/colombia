@@ -1,4 +1,4 @@
-import distributeNumbers from '../index';
+import distributeNumbers from '..';
 
 describe('distributeNumbers', () => {
   const ballNumbers = Array.from({ length: 15 }, (_, i) => i + 1);

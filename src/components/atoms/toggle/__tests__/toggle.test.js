@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Toggle from '../index';
+import Toggle from '..';
 
 describe('Toggle atom', () => {
   const handleChangeMock = jest.fn();

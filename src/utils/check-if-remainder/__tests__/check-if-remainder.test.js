@@ -1,4 +1,4 @@
-import checkIfRemainder from '../index';
+import checkIfRemainder from '..';
 
 describe('checkIfRemainder', () => {
   const ballCount = 15;
