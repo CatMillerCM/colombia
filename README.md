@@ -1,68 +1,15 @@
-# Using this template
+# Pool Request
 
-## Creating repo
+Welcome to Colombia's project: Pool Request.
 
-- Clone this repo from github or local files
-- Create a new repo on github
-- Point cloned repo to new repo using: `git remote set-url origin [REPO URL]`
-- Push up changes: `git push -u origin main`
-- If the error 'fatal: the remote end hung up unexpectedly' arises, use `git config http.postBuffer 524288000` and try push again
-- Delete test files if not testing
-- Delete this part of readme
-- npm i
+Colombia was a country full of colour, culture and adorable creatures, but one aspect that really made my trip was the people I met and the time spent with them. Whether it was in a beach bar, at a sociable hostel, or in a countryside town's square, there always seemed to be a game of pool ready to commence.
 
-## Creating a new component
+With so many friends wanting to get involved, it was common to play a slightly different take on Cutthroat Pool, where each player would receive a secret batch of ball numbers to attempt to keep safe on the table. Most of the time this would involve tediously writing numbers on napkins and ripping up tiny morsels to distribute.
 
-```
-import PropTypes from 'prop-types';
-import Image from 'next/image';
-import styles from './component.module.css';
+Well, Pool Request solves this issue - making it easy to have each player's numbers secretly assigned.
 
-const Component = ({ aProp }) => {
-  return (
-    <div className={styles.image}>
-      <Image
-        src={aProp.src}
-        alt={aProp.alt}
-        layout="fill"
-        objectFit="cover"
-        unoptimized
-      />
-    </div>
-  )
-};
+While the app itself is very basic, I wanted to focus on ensuring each component and util was thoroughly tested and that the code base was clean and consistent, using React Testing Library, ESlint and PostCSS.
 
-Component.propTypes = {
-  aProp: PropTypes.string.isRequired,
-};
+Hosted independently [here](https://colombia.cat-miller.com/).
 
-export { Component };
-```
-
-### Hosting
-
-Follow guide at https://callumeddisford.medium.com/deploying-a-next-js-14-app-to-google-cloud-run-c193895f5bd4
-
-# COUNTRY PROJECT
-
-// TO DO - update readme
-
-Welcome to [COUNTRY NAMES]'s project: [PROJECT NAME].
-
-[SPIEL]
-
-## Getting Started
-
-First, install all the dependencies using
-
-```bash
-npm i
-```
-
-Then run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A full write up, with further information about the project, can be found on [What's My Country Code - Colombia](https://whatsmycountrycode.cat-miller.com/colombia).
