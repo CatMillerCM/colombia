@@ -8,7 +8,7 @@ With so many friends wanting to get involved, it was common to play a slightly d
 
 Well, Pool Request solves this issue - making it easy to have each player's numbers secretly assigned.
 
-While the app itself is very basic, I wanted to focus on ensuring each component and util was thoroughly tested and that the code base was clean and consistent, using React Testing Library, ESlint and PostCSS.
+While the app itself is very basic, I wanted to focus on ensuring each component and util was thoroughly tested and that the code base was clean and consistent, using React Testing Library, ESlint, Stylelint and PostCSS.
 
 Hosted independently [here](https://colombia.cat-miller.com/).
 
