@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import PropTypes from 'prop-types';
 import { Roboto_Condensed } from 'next/font/google';
 import './globals.css';
